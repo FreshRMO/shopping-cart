@@ -13,9 +13,8 @@ const CartItems = (props) => {
             <div className="col-md-2">Quantity</div>
           </div>
         </div>
-        {props.cartItemsList.map(item => <CartItem
-          key={item.id}
-          name={item.product.name}
+        {props.items.map(item => <CartItem
+          product={item.product.name}
           priceInCents={item.product.priceInCents}
           quantity={item.quantity}
                                          />)}

@@ -90,10 +90,10 @@ class App extends Component {
   render() {
     return (<div className="App">
       <CartHeader/>
-      <CartItems cartItemsList={this.state.cartItemsList}/>
+      <CartItems items={this.state.cartItemsList}/>
       <Total items={this.state.cartItemsList}/>
       <AddItem products={this.state.products} addItemtoState={this.addItemtoState}/>
-      <CartFooter copyright={2019}/>
+      <CartFooter year='2019'/>
     </div>);
   }
 }

@@ -26,12 +26,12 @@ class AddItem extends Component {
       <form onSubmit={this.onSubmit}>
         <div className="form-group">
           <label htmlFor="quantity">Quantity</label>
-          <input type="number" className="form-control" id="quantity" value={this.state.quantity} onChange={(e)=> this.setState({quantity: e.target.value})}/>
+          <input type="number" className="form-control" id="quantity" value={this.state.quantity} onChange={this.onChange}/>
 
           <label htmlFor="product">Product</label>
-          <select id="product" className="form-control" value={this.state.productId} onChange={(e) => this.setState({productId: e.target.value})}>
+          <select id="product" className="form-control" name="productID" onChange={this.onChange}>
             <option>Choose...</option>
-            {this.props.products.map(product => <option key={product.id}>{product.name}</option>)}
+            {this.props.products.map((product, i) => <option key={i} value={product.id}>{product.name}</option>)}
           </select>
 
           <button type="submit" className="btn btn-primary">Submit</button>
